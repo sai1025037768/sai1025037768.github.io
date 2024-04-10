@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>categories | Hexo</title>
+  <title>自定义验证码/手机号输入框 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="categories | Hexo">
+  <meta name="description" content="自定义验证码/手机号输入框 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
@@ -371,19 +371,29 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-自定义验证码-手机号输入框" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">categories</h1>
+        <h1 class="article-title">自定义验证码/手机号输入框</h1>
     
     <!-- <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Jetpack Compose">Jetpack Compose</a> > 
+            
+            <a  data-rel="Jetpack Compose&lt;---&gt;Android">Android</a>
+            
+        </span>
+        
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-04-10 11:43:58'>2024-04-08 16:14</time>
+            Created At : <time class="date" title='Updated At: 2024-04-10 11:43:58'>2024-04-09 16:02</time>
         
     </div>
     <div class="article-meta">
@@ -421,7 +431,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>功能需求</p>
+<ul>
+<li>高亮当前输入框</li>
+<li>输入完成后自动跳转下一个输入框</li>
+</ul>
+<p>实现思路</p>
+<p>BasicTextField</p>
+<p>decorationBox实现布局装饰，不使用innerField</p>
+<p>绘制4个输入框，限制BasicTextField的输入长度为4</p>
+<p>根据当前输入的数值长度，绘制当前高亮</p>
+<p>自动弹出键盘</p>
+<p>代码</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> input <span class="keyword">by</span> remember &#123;</span><br><span class="line">  mutableStateOf(<span class="string">&quot;&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">val</span> focus = remember &#123; FocusRequester() &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Text(</span><br><span class="line">  text = <span class="string">&quot;补全隐号&quot;</span>,</span><br><span class="line">  fontWeight = FontWeight.Bold,</span><br><span class="line">  color = Color_222222,</span><br><span class="line">  fontSize = <span class="number">16.</span>sp,</span><br><span class="line">  modifier = Modifier.padding(top = <span class="number">20.</span>dp, bottom = <span class="number">18.</span>dp)</span><br><span class="line">)</span><br><span class="line">BasicTextField(</span><br><span class="line">  value = input,</span><br><span class="line">  onValueChange = &#123;</span><br><span class="line">      input = <span class="keyword">if</span> (it.length &gt; <span class="number">4</span>) it.substring(<span class="number">0</span>, <span class="number">4</span>) <span class="keyword">else</span> it</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  modifier = Modifier.focusRequester(focus),</span><br><span class="line">  keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),</span><br><span class="line">  decorationBox = &#123;</span><br><span class="line">      Row(</span><br><span class="line">          modifier = Modifier</span><br><span class="line">              .fillMaxWidth()</span><br><span class="line">              .onGloballyPositioned &#123;</span><br><span class="line">                	<span class="comment">// 此方式无效</span></span><br><span class="line">									<span class="comment">//focus.requestFocus()</span></span><br><span class="line">              &#125;,</span><br><span class="line">          horizontalArrangement = Arrangement.spacedBy(</span><br><span class="line">              <span class="number">10.</span>dp,</span><br><span class="line">              alignment = Alignment.CenterHorizontally</span><br><span class="line">          )</span><br><span class="line">      ) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">          <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">0.</span><span class="number">.3</span>) &#123;</span><br><span class="line">              <span class="keyword">val</span> value = (input.getOrNull(i) ?: <span class="string">&quot;&quot;</span>).toString()</span><br><span class="line">              Box(</span><br><span class="line">                  modifier = Modifier</span><br><span class="line">                      .size(width = <span class="number">35.</span>dp, height = <span class="number">40.</span>dp)</span><br><span class="line">                      .border(</span><br><span class="line">                          <span class="number">0.5</span>.dp,</span><br><span class="line">                          <span class="keyword">if</span> (i == input.length || (i == <span class="number">3</span> &amp;&amp; input.length &gt;= <span class="number">3</span>)) Color_134AED <span class="keyword">else</span> Color_E5E5E5,</span><br><span class="line">                          RoundedCornerShape(<span class="number">2.</span>dp)</span><br><span class="line">                      ),</span><br><span class="line">                  contentAlignment = Alignment.Center</span><br><span class="line">              ) &#123;</span><br><span class="line">                  Text(</span><br><span class="line">                      text = value,</span><br><span class="line">                      color = Color_222222,</span><br><span class="line">                      fontSize = <span class="number">18.</span>sp</span><br><span class="line">                  )</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">LaunchedEffect(key1 = <span class="built_in">Unit</span>) &#123;</span><br><span class="line">  	<span class="comment">// 添加延时，无延时无法在进入页面后自动弹出</span></span><br><span class="line">    delay(<span class="number">300</span>)</span><br><span class="line">    focus.requestFocus()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果需要在输入框中绘制光标，可使用drawBehind</p>
+
       
        
     </div>

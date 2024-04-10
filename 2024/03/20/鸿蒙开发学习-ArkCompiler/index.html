@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>categories | Hexo</title>
+  <title>鸿蒙开发学习-ArkCompiler | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="categories | Hexo">
+  <meta name="description" content="鸿蒙开发学习-ArkCompiler | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
@@ -371,19 +371,27 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-鸿蒙开发学习-ArkCompiler" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">categories</h1>
+        <h1 class="article-title">鸿蒙开发学习-ArkCompiler</h1>
     
     <!-- <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Harmony">Harmony</a>
+            
+        </span>
+        
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-04-10 11:43:58'>2024-04-08 16:14</time>
+            Created At : <time class="date" title='Updated At: 2024-04-10 11:43:58'>2024-03-20 15:23</time>
         
     </div>
     <div class="article-meta">
@@ -405,7 +413,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ArkCompiler%EF%BC%88%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8%EF%BC%89"><span class="toc-text">ArkCompiler（方舟编译器）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-text">架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-text">前端编译器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArkCompiler%E8%BF%90%E8%A1%8C%E6%97%B6"><span class="toc-text">ArkCompiler运行时</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -421,7 +429,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="ArkCompiler（方舟编译器）"><a href="#ArkCompiler（方舟编译器）" class="headerlink" title="ArkCompiler（方舟编译器）"></a>ArkCompiler（方舟编译器）</h2><p>ArkCompiler是组件化，可配置的多语言编译和运行平台，它既能支持单一语言运行环境，也能支撑多种语言组合的运行环境。</p>
+<p>它目前主要支持的语言是JavaScript、TypeScript和Java。</p>
+<h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><p>ArkCompiler包含编译器、工具链、运行时等关键部件上。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/429b19e35b774bd4b82cd440d37fc14e~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" alt="2.jpg"></p>
+<h4 id="前端编译器"><a href="#前端编译器" class="headerlink" title="前端编译器"></a>前端编译器</h4><p>前端编译器是高级语言通往语言运行时的桥梁，它按照语言规范，将编程语言表达的语义翻译为运行时能够理解的介质。</p>
+<p>在ArkCompiler解决方案里，这体现为ArkCompiler字节码，即ArkCompiler ByteCode（简称abc)。</p>
+<p>部分语言，也支持通过ArkCompiler的AOT Compiler组件直接将字节码编译成对应体系架构的优化机器码。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d51bc9c508b34dd68e52dbcc45eeefb7~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" alt="3.jpg"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dc73a0b2c87f4af3ac39084b5c667d12~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" alt="4.jpg"></p>
+<h3 id="ArkCompiler运行时"><a href="#ArkCompiler运行时" class="headerlink" title="ArkCompiler运行时"></a>ArkCompiler运行时</h3><p>ArkCompiler运行时，被分为了核心运行时（Core Runtime）和各自语言独立的运行时插件（Runtime Plugin）。</p>
+<p>ArkCompiler运行时执行引擎有多种组件，包括解释器、JIT编译器和AOT编译。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dd0359c3e0474c75b4d50763ea8bf9cc~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" alt="7.jpg"></p>
+<p>无论是JIT编译器生成的优化代码，还是AOT编译器生成的优化代码，通常都是在一定优化假设或者优化推断的前提下生成的。如果这个前提在运行时不成立，则需要进行Deopt（逆优化），回退正能量解释器执行，这种情况一般较少发生。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/00f75276f4874466b410d6923f96b007~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" alt="8.jpg"></p>
+<p>Actor并发编程模型</p>
+<p>此模型下执行体之间不共享任何数据，通过消息机制进行通信。当前，业界的一些Actor并发模型，例如传统JS引擎的web-workder实现，有启动速度慢，内在占用高等缺陷。</p>
+
       
        
     </div>
