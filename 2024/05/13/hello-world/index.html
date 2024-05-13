@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>flow学习 | Hexo</title>
+  <title>Hello World | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="flow学习 | Hexo">
+  <meta name="description" content="Hello World | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
@@ -413,29 +413,19 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-flow学习" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">flow学习</h1>
+        <h1 class="article-title">Hello World</h1>
     
     <!-- <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="kotlin">kotlin</a> > 
-            
-            <a  data-rel="kotlin&lt;---&gt;flow">flow</a>
-            
-        </span>
-        
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-05-13 15:33:18'>2024-04-10 11:24</time>
+            Created At : <time class="date" title='Updated At: 2024-05-13 15:33:18'>2024-05-13 15:33</time>
         
     </div>
     <div class="article-meta">
@@ -457,7 +447,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-text">作用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AB%E7%AB%AF%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">末端操作符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Channel"><span class="toc-text">Channel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StateFlow"><span class="toc-text">StateFlow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SharedFlow"><span class="toc-text">SharedFlow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#snapshotFlow"><span class="toc-text">snapshotFlow</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -473,29 +463,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>进行异步数据流操作，响应式编程</p>
-<p>Flow创建数据流，是冷流，也就是必须要在调用末端操作符后才会执行数据流生产操作。</p>
-<h3 id="末端操作符"><a href="#末端操作符" class="headerlink" title="末端操作符"></a>末端操作符</h3><p>collect</p>
-<p>toList、toSet</p>
-<p>first、last</p>
-<p>reduce、fold</p>
-<h2 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h2><p>Channel在概念上类似于BlockQueue，并发安全的缓冲队列（先进先出），实现多个协程间的通信。</p>
-<p>Channel是一个热流，不支持数据流操作</p>
-<h2 id="StateFlow"><a href="#StateFlow" class="headerlink" title="StateFlow"></a>StateFlow</h2><p>只保存最新数据的数据，和LiveData的效果一样</p>
-<p>和LiveData的不同：</p>
-<ul>
-<li>第一点，<code>StateFlow</code> 必须有初始值，<code>LiveData</code> 不需要。</li>
-<li>第二点，当 View 变为 STOPPED 状态时，LiveData.observe() 会自动取消注册使用方，而从 StateFlow 或任何其他数据流收集数据则不会取消注册使用方。若要实现相同的行为，您需要从 <code>Lifecycle.repeatOnLifecycle</code> 块收集数据流。</li>
-</ul>
-<h2 id="SharedFlow"><a href="#SharedFlow" class="headerlink" title="SharedFlow"></a>SharedFlow</h2><p>使用场景：</p>
-<ul>
-<li><p>发生订阅时，需要将过去的已经更新的n个值，同步给新的订阅者。</p>
-</li>
-<li><p>配置缓存策略</p>
-</li>
-</ul>
-<h2 id="snapshotFlow"><a href="#snapshotFlow" class="headerlink" title="snapshotFlow"></a>snapshotFlow</h2><p>snapshotFlow是一个普通的kotlin函数，没有被@Composabel修饰；</p>
-<p>snapshotFlow函数返回值是一个flow(冷流)：</p>
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>创建草稿</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new draft <span class="string">&quot;文章名&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>发布草稿</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish post <span class="string">&quot;文章名&quot;</span></span><br></pre></td></tr></table></figure>
+
 
       
        
