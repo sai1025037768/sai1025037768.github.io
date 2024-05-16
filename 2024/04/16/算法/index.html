@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-08T08:14:31.000Z">
-<meta property="article:modified_time" content="2024-05-16T02:50:19.927Z">
+<meta property="article:modified_time" content="2024-05-16T04:50:43.662Z">
 <meta property="article:author" content="Zhang Sai">
 <meta name="twitter:card" content="summary">
 
@@ -311,7 +311,7 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
-            <span class="post-date" title="2024-05-16 10:50:19">2024/05/16</span>
+            <span class="post-date" title="2024-05-16 12:50:43">2024/05/16</span>
         </a>
         
         
@@ -425,7 +425,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-05-16 10:50:19'>2024-04-16 15:24</time>
+            Created At : <time class="date" title='Updated At: 2024-05-16 12:50:43'>2024-04-16 15:24</time>
         
     </div>
     <div class="article-meta">
@@ -543,10 +543,10 @@
 <img src="/2024/04/16/%E7%AE%97%E6%B3%95/complete_binary_tree.png" class="" title="完全二叉树">
 
 <h4 id="完满二叉树"><a href="#完满二叉树" class="headerlink" title="完满二叉树"></a>完满二叉树</h4><p>除了叶节点外，其余所有节点都有两个子节点</p>
-<style>.mzmwnxurresw{zoom:50%;}</style><img src="/2024/04/16/%E7%AE%97%E6%B3%95/full_binary_tree.png" class="mzmwnxurresw" alt="完满二叉树">
+<style>.rfpsbwzdsffw{zoom:50%;}</style><img src="/2024/04/16/%E7%AE%97%E6%B3%95/full_binary_tree.png" class="rfpsbwzdsffw" alt="完满二叉树">
 
 <h4 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h4><p>任意节点的左子树与右子树的高度之差的绝对值不超过1</p>
-<style>.dxfqxinfrinw{zoom:50%;}</style><img src="/2024/04/16/%E7%AE%97%E6%B3%95/balanced_binary_tree.png" class="dxfqxinfrinw" alt="平衡二叉树">
+<style>.vulwqoxakaji{zoom:50%;}</style><img src="/2024/04/16/%E7%AE%97%E6%B3%95/balanced_binary_tree.png" class="vulwqoxakaji" alt="平衡二叉树">
 
 <h4 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h4><h5 id="层序遍历（广度优先遍历）"><a href="#层序遍历（广度优先遍历）" class="headerlink" title="层序遍历（广度优先遍历）"></a>层序遍历（广度优先遍历）</h5><p>借助队列实现</p>
 <h5 id="前序、中序、后序遍历（深度优先遍历）"><a href="#前序、中序、后序遍历（深度优先遍历）" class="headerlink" title="前序、中序、后序遍历（深度优先遍历）"></a>前序、中序、后序遍历（深度优先遍历）</h5><p>先走到尽头，再回溯继续</p>
@@ -651,7 +651,7 @@
 <p>容器的容量等于高度和宽度的乘积（面积），其中高度由较短的隔板决定，宽度是两个隔板的数组索引之差。</p>
 <p>请在数组中选择两个隔板，使得组成的容器的容量最大，返回最大容量。示例如图 15-7 所示。</p>
 </blockquote>
-<style>.embscosqwlxu{zoom: 67%;}</style><img src="/2024/04/16/%E7%AE%97%E6%B3%95/max_capacity_example.png" class="embscosqwlxu" alt="最大容量问题的示例数据">
+<style>.nwunsnonbfyn{zoom: 67%;}</style><img src="/2024/04/16/%E7%AE%97%E6%B3%95/max_capacity_example.png" class="nwunsnonbfyn" alt="最大容量问题的示例数据">
 
 <p>面积是由高度较小的隔板决定的，向内移动时，宽度减小，如果向内移动高度大的隔板，计算面积的高度可能不变或变小，则面积只会小于当前面积；只有将较短的隔板向内移动，隔板的高度可能变大，面积才可能变大。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* code </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">maxCapacity</span><span class="params">(<span class="type">int</span>[] ht)</span>&#123;</span><br><span class="line">  <span class="comment">// 初始化左、右指针</span></span><br><span class="line">  <span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">  <span class="type">int</span> <span class="variable">r</span> <span class="operator">=</span> ht.length - <span class="number">1</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">    <span class="comment">// 计算面积</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">area</span> <span class="operator">=</span> Math.min(ht[i], ht[j]) * (r -l);</span><br><span class="line">    <span class="comment">// 更新面积</span></span><br><span class="line">    max = Math.max(max, area);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将较短的柱子向内移动。</span></span><br><span class="line">    <span class="keyword">if</span>(ht[l] &lt;= ht[r])&#123;</span><br><span class="line">      l++;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      r--;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -662,7 +662,7 @@
 <blockquote>
 <p>给定一个正整数 𝑛 ，将其切分为至少两个正整数的和，求切分后所有整数的乘积最大是多少，如图 15-13 所示。</p>
 </blockquote>
-<style>.pldxqwtofgmt{zoom:67%;}</style><img src="/2024/04/16/%E7%AE%97%E6%B3%95/max_product_cutting_definition.png" class="pldxqwtofgmt" alt="最大切分乘积的问题定义">
+<style>.uubdesvpvgqq{zoom:67%;}</style><img src="/2024/04/16/%E7%AE%97%E6%B3%95/max_product_cutting_definition.png" class="uubdesvpvgqq" alt="最大切分乘积的问题定义">
 
 <p>用栈实现队列</p>
 <p>思路：</p>

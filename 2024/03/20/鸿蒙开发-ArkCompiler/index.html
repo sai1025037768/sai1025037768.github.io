@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-08T08:14:31.000Z">
-<meta property="article:modified_time" content="2024-05-16T02:50:19.927Z">
+<meta property="article:modified_time" content="2024-05-16T04:50:43.662Z">
 <meta property="article:author" content="Zhang Sai">
 <meta name="twitter:card" content="summary">
 
@@ -311,7 +311,7 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
-            <span class="post-date" title="2024-05-16 10:50:19">2024/05/16</span>
+            <span class="post-date" title="2024-05-16 12:50:43">2024/05/16</span>
         </a>
         
         
@@ -433,7 +433,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-05-16 10:50:19'>2024-03-20 15:06</time>
+            Created At : <time class="date" title='Updated At: 2024-05-16 12:50:43'>2024-03-20 15:06</time>
         
     </div>
     <div class="article-meta">
@@ -474,27 +474,27 @@
         <h2 id="ArkCompiler（方舟编译器）"><a href="#ArkCompiler（方舟编译器）" class="headerlink" title="ArkCompiler（方舟编译器）"></a>ArkCompiler（方舟编译器）</h2><p>ArkCompiler是组件化，可配置的多语言编译和运行平台，它既能支持单一语言运行环境，也能支撑多种语言组合的运行环境。</p>
 <p>它目前主要支持的语言是JavaScript、TypeScript和Java。</p>
 <h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><p>ArkCompiler包含编译器、工具链、运行时等关键部件上。</p>
-<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/429b19e35b774bd4b82cd440d37fc14e~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0-20240410151111262.awebp" class="" title="2.jpg">
+<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/2.awebp" class="" title="2.jpg">
 
 <h4 id="前端编译器"><a href="#前端编译器" class="headerlink" title="前端编译器"></a>前端编译器</h4><p>前端编译器是高级语言通往语言运行时的桥梁，它按照语言规范，将编程语言表达的语义翻译为运行时能够理解的介质。</p>
 <p>在ArkCompiler解决方案里，这体现为ArkCompiler字节码，即ArkCompiler ByteCode（简称abc)。</p>
 <p>部分语言，也支持通过ArkCompiler的AOT Compiler组件直接将字节码编译成对应体系架构的优化机器码。</p>
-<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/d51bc9c508b34dd68e52dbcc45eeefb7~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0-20240410151111287.awebp" class="" title="3.jpg">
+<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/3.awebp" class="" title="3.jpg">
 
 
 
 
 
-<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/dc73a0b2c87f4af3ac39084b5c667d12~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0-20240410151111336.awebp" class="" title="4.jpg">
+<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/4.awebp" class="" title="4.jpg">
 
 
 
 <h3 id="ArkCompiler运行时"><a href="#ArkCompiler运行时" class="headerlink" title="ArkCompiler运行时"></a>ArkCompiler运行时</h3><p>ArkCompiler运行时，被分为了核心运行时（Core Runtime）和各自语言独立的运行时插件（Runtime Plugin）。</p>
 <p>ArkCompiler运行时执行引擎有多种组件，包括解释器、JIT编译器和AOT编译。</p>
-<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/dd0359c3e0474c75b4d50763ea8bf9cc~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0-20240410151111278.awebp" class="" title="7.jpg">
+<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/5.awebp" class="" title="7.jpg">
 
 <p>无论是JIT编译器生成的优化代码，还是AOT编译器生成的优化代码，通常都是在一定优化假设或者优化推断的前提下生成的。如果这个前提在运行时不成立，则需要进行Deopt（逆优化），回退正能量解释器执行，这种情况一般较少发生。</p>
-<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/00f75276f4874466b410d6923f96b007~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0-20240410151111288.awebp" class="" title="8.jpg">
+<img src="/2024/03/20/%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91-ArkCompiler/1.awebp" class="" title="8.jpg">
 
 <p>Actor并发编程模型</p>
 <p>此模型下执行体之间不共享任何数据，通过消息机制进行通信。当前，业界的一些Actor并发模型，例如传统JS引擎的web-workder实现，有启动速度慢，内在占用高等缺陷。</p>
